@@ -1,0 +1,390 @@
+Technology {
+
+    name,
+    category,
+    description,
+    use_cases,
+    learning_curve,
+    community_size,
+    compatibility
+    special_considerations (optl.)
+}
+
+FRONTEND
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+db.Technology.updateMany(
+  { name: { $in: ["React", "Angular", "Next.js", "Svelte", "Vue.js"] } },
+  { 
+    $set: { 
+      "compatibility.api.$[elem].reason": "SOAP is rarely used in modern frontend development due to its complexity, heavy XML format, and preference for REST/GraphQL APIs." 
+    } 
+  },
+  { arrayFilters: [{ "elem.name": "SOAP" }] }
+)
+
+
+db.Technology.insertOne({
+name: "React",
+category: "frontend",
+description: "A JavaScript library for building dynamic user interfaces through a component-based architecture.",
+use_cases: "Building interactive single-page applications (SPAs)",
+learning_curve: 2,
+community_size: 3,
+compatibility: {
+backend: [
+{ name: "Express.js", score: 3 },
+{ name: "NestJS", score: 3 },
+{ name: "Django", score: 2 },
+{ name: "Spring Boot", score: 2 },
+{ name: "Laravel", score: 2 },
+{ name: "FastAPI", score: 2 }
+],
+api: [
+{ name: "REST", score: 3 },
+{ name: "GraphQL", score: 3 },
+{ name: "WebSocket", score: 3 },
+{ name: "tRPC", score: 3 },
+{ name: "SOAP", score: 1 }
+]
+},
+special_considerations: [
+"Vercel - Optimized deployment platform for React"
+]
+})
+
+db.Technology.insertOne({
+  name: "Vue.js",
+  category: "frontend",
+  description: "A progressive JavaScript framework for building user interfaces and SPAs.",
+  use_cases: "Single Page Applications (SPAs)",
+  learning_curve: 1,
+  community_size: 3,
+  compatibility: {
+    backend: [
+      { name: "Express.js", score: 3 },
+      { name: "NestJS", score: 3 },
+      { name: "Django", score: 2 },
+      { name: "Spring Boot", score: 2 },
+      { name: "Laravel", score: 2 },
+      { name: "FastAPI", score: 2 }
+    ],
+    api: [
+      { name: "REST", score: 3 },
+      { name: "GraphQL", score: 3 },
+      { name: "WebSocket", score: 3 },
+      { name: "tRPC", score: 3 },
+      { name: "SOAP", score: 1 }
+    ]
+  }
+})
+
+db.Technology.insertOne({
+  name: "Angular",
+  category: "frontend",
+  description: "A platform and framework for building single-page applications using HTML and TypeScript, based on the MVC (Model-View-Controller) architecture.",
+  use_case: "Enterprise-level web applications with complex features and scalability needs",
+  learning_curve: 3,
+  community_size: 3,
+  compatibility: {
+    backend: [
+      { name: "Express.js", score: 3 },
+      { name: "NestJS", score: 3 },
+      { name: "Django", score: 2 },
+      { name: "Spring Boot", score: 2 },
+      { name: "Laravel", score: 2 },
+      { name: "FastAPI", score: 2 }
+    ],
+    api: [
+      { name: "REST", score: 3 },
+      { name: "GraphQL", score: 3 },
+      { name: "WebSocket", score: 3 },
+      { name: "tRPC", score: 3 },
+      { name: "SOAP", score: 1 }
+    ]
+  }
+})
+
+db.Technology.insertOne({
+  name: "Next.js",
+  category: "frontend",
+  description: "A React framework for building server-rendered applications, supporting SSR, SSG, and API routes in an MVC-like architecture.",
+  use_case: "SEO-friendly and high-performance web applications",
+  learning_curve: 2,
+  community_size: 3,
+  compatibility: {
+    backend: [
+      { name: "Express.js", score: 3 },
+      { name: "NestJS", score: 3 },
+      { name: "Django", score: 2 },
+      { name: "Spring Boot", score: 2 },
+      { name: "Laravel", score: 2 },
+      { name: "FastAPI", score: 2 }
+    ],
+    api: [
+      { name: "REST", score: 3 },
+      { name: "GraphQL", score: 3 },
+      { name: "WebSocket", score: 3 },
+      { name: "tRPC", score: 3 },
+      { name: "SOAP", score: 1 }
+    ]
+  },
+  special_considerations: [
+    "Vercel - Optimized deployment platform for Next.js"
+  ]
+})
+
+db.Technology.insertOne({
+  name: "Svelte",
+  category: "frontend",
+  description: "A compiler-based JavaScript framework that shifts work from the browser to build time, offering a reactive and component-driven architecture.",
+  use_case: "Lightweight and highly performant web applications",
+  learning_curve: 1,
+  community_size: 2,
+  compatibility: {
+    backend: [
+      { name: "Express.js", score: 3 },
+      { name: "NestJS", score: 3 },
+      { name: "Django", score: 2 },
+      { name: "Spring Boot", score: 2 },
+      { name: "Laravel", score: 2 },
+      { name: "FastAPI", score: 2 }
+    ],
+    api: [
+      { name: "REST", score: 3 },
+      { name: "GraphQL", score: 3 },
+      { name: "WebSocket", score: 3 },
+      { name: "tRPC", score: 3 },
+      { name: "SOAP", score: 1 }
+    ]
+  }
+})
+
+db.Technology.insertOne({
+  name: "HTML & CSS",
+  category: "frontend",
+  description: "The foundational technologies for structuring and styling web pages, following a declarative and component-friendly approach.",
+  use_case: "Building static web pages and UI components",
+  learning_curve: 1,
+  community_size: 3,
+  compatibility: {
+    backend: [
+      { name: "Express.js", score: 3 },
+      { name: "NestJS", score: 3 },
+      { name: "Django", score: 3 },
+      { name: "Spring Boot", score: 3 },
+      { name: "Laravel", score: 3 },
+      { name: "FastAPI", score: 3 }
+    ],
+    api: [
+      { name: "REST", score: 3 },
+      { name: "GraphQL", score: 3 },
+      { name: "WebSocket", score: 3 },
+      { name: "tRPC", score: 3 },
+      { name: "SOAP", score: 2 }
+    ]
+  }
+})
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+BACKEND
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+db.Technology.insertOne({
+name: "Express.js",
+category: "backend",
+description: "Minimal and flexible Node.js web application framework designed for building web applications and APIs.",
+use_cases: "Building RESTful web services and APIs",
+learning_curve: 2,
+community_size: 3,
+compatibility: {
+database: [
+{ name: "MongoDB", score: 3 },
+{ name: "PostgreSQL", score: 3 },
+{ name: "MySQL", score: 3 },
+{ name: "Redis", score: 3 },
+{ name: "Cassandra", score: 2 },
+{ name: "Supabase", score: 2 }
+],
+deployment: [
+{ name: "Vercel", score: 3 },
+{ name: "AWS", score: 3 },
+{ name: "Netlify", score: 2 },
+{ name: "Heroku", score: 3 },
+{ name: "Google Cloud", score: 3 },
+{ name: "DigitalOcean", score: 3 }
+]
+},
+special_considerations: [
+"MongoDB - Forms the popular MERN stack"
+]
+})
+
+db.Technology.insertOne({
+name: "Django",
+category: "backend",
+description: "High-level Python web framework that encourages rapid development and clean, pragmatic design.",
+use_cases: "Building full-featured web applications with built-in admin interface",
+learning_curve: 2,
+community_size: 3,
+compatibility: {
+database: [
+{ name: "PostgreSQL", score: 3 },
+{ name: "MySQL", score: 3 },
+{ name: "MongoDB", score: 1, reason: "Django ORM works best with relational DBs"},
+{ name: "Redis", score: 2 },
+{ name: "Cassandra", score: 1, reason": "No native Django ORM support for Cassandra"},
+{ name: "Supabase", score: 2 }
+],
+deployment: [
+{ name: "AWS", score: 3 },
+{ name: "Google Cloud", score: 3 },
+{ name: "DigitalOcean", score: 3 },
+{ name: "Heroku", score: 3 },
+{ name: "Vercel", score: 1, reason: "Not optimized for Django"},
+{ name: "Netlify", score: 1, reason: "Not optimized for Django"}
+]
+},
+special_considerations: [
+"PostgreSQL - Django's preferred and best-supported database",
+]
+})
+
+db.Technology.insertOne({
+name: "Spring Boot",
+category: "backend",
+description: "Java-based framework that simplifies the development of enterprise-level applications with pre-configured templates.",
+use_cases: "Building enterprise-level applications and microservices",
+learning_curve: 3,
+community_size: 3,
+compatibility: {
+database: [
+{ name: "PostgreSQL", score: 3 },
+{ name: "MySQL", score: 3 },
+{ name: "MongoDB", score: 3 },
+{ name: "Redis", score: 3 },
+{ name: "Cassandra", score: 3 },
+{ name: "Supabase", score: 1, reason: "Supabase's core features and SDKs are JavaScript-centric, lacking proper Java support"}
+],
+deployment: [
+{ name: "Vercel", score: 1, reason: "Platform doesn't support Java applications"},
+{ name: "AWS", score: 3 },
+{ name: "Netlify", score: 1, reason: "No native Java runtime support"},
+{ name: "Heroku", score: 2 },
+{ name: "Google Cloud", score: 3 },
+{ name: "DigitalOcean", score: 3 }
+]
+}
+})
+
+db.Technology.insertOne({
+name: "Laravel",
+category: "backend",
+description: "PHP web framework offering elegant syntax and tools for building modern web applications with MVC architecture.",
+use_cases: "Building full-stack web applications and RESTful APIs",
+learning_curve: 2,
+community_size: 3,
+compatibility: {
+database: [
+{ name: "PostgreSQL", score: 3 },
+{ name: "MySQL", score: 3 },
+{ name: "MongoDB", score: 2 },
+{ name: "Redis", score: 3 },
+{ name: "Cassandra", score: 1, reason: "Limited support for NoSQL in Laravel's Eloquent ORM" },
+{ name: "Supabase", score: 2 }
+],
+deployment: [
+{ name: "Vercel", score: 1, reason: "Platform doesn't support PHP applications"},
+{ name: "AWS", score: 3 },
+{ name: "Netlify", score: 1, reason: "No native PHP runtime support"},
+{ name: "Heroku", score: 3 },
+{ name: "Google Cloud", score: 3 },
+{ name: "DigitalOcean", score: 3 }
+]
+},
+  special_considerations: [
+    "MySQL - Laravel's preferred database with excellent Eloquent ORM support"
+  ]
+})
+
+db.Technology.insertOne({
+  name: "FastAPI",
+  category: "backend",
+  description: "Modern, fast web framework for building APIs with Python based on standard Python type hints.",
+  use_cases: "Building high-performance APIs and microservices",
+  learning_curve: 1,
+  community_size: 2,
+  compatibility: {
+    database: [
+      { name: "PostgreSQL", score: 3 },
+      { name: "MySQL", score: 3 },
+      { name: "MongoDB", score: 3 },
+      { name: "Redis", score: 3 },
+      { name: "Cassandra", score: 2 },
+      { name: "Supabase", score: 2 }
+    ],
+    deployment: [
+      { name: "Vercel", score: 2 },
+      { name: "AWS", score: 3 },
+      { name: "Netlify", score: 1, reason: "Limited Python runtime support" },
+      { name: "Heroku", score: 3 },
+      { name: "Google Cloud", score: 3 },
+      { name: "DigitalOcean", score: 3 }
+    ]
+  }
+})
+
+db.Technology.insertOne({
+  name: "ASP.NET Core",
+  category: "backend",
+  description: "Cross-platform, high-performance framework for building modern, cloud-based, Internet-connected applications.",
+  use_cases: "Building enterprise web applications, microservices, and APIs",
+  learning_curve: 3,
+  community_size: 3,
+  compatibility: {
+    database: [
+      { name: "PostgreSQL", score: 3 },
+      { name: "MySQL", score: 3 },
+      { name: "MongoDB", score: 3 },
+      { name: "Redis", score: 3 },
+      { name: "Cassandra", score: 2 },
+      { name: "Supabase", score: 1, reason: "Limited .NET SDK support" }
+    ],
+    deployment: [
+      { name: "Vercel", score: 1, reason: "No native .NET runtime support" },
+      { name: "AWS", score: 3 },
+      { name: "Netlify", score: 1, reason: "No native .NET runtime support" },
+      { name: "Heroku", score: 2 },
+      { name: "Google Cloud", score: 3 },
+      { name: "DigitalOcean", score: 3 }
+    ]
+  }
+})
+
+db.Technology.insertOne({
+  name: "Ruby on Rails",
+  category: "backend",
+  description: "Full-stack web application framework that emphasizes convention over configuration and rapid development.",
+  use_cases: "Building full-featured web applications with integrated frontend and backend",
+  learning_curve: 2,
+  community_size: 3,
+  compatibility: {
+    database: [
+      { name: "PostgreSQL", score: 3 },
+      { name: "MySQL", score: 3 },
+      { name: "MongoDB", score: 2},
+      { name: "Redis", score: 3 },
+      { name: "Cassandra", score: 1, reason: "Limited NoSQL support in Active Record" },
+      { name: "Supabase", score: 2 }
+    ],
+    deployment: [
+      { name: "Vercel", score: 1, reason: "No native Ruby runtime support" },
+      { name: "AWS", score: 3 },
+      { name: "Netlify", score: 1, reason: "No native Ruby runtime support" },
+      { name: "Heroku", score: 3 },
+      { name: "Google Cloud", score: 3 },
+      { name: "DigitalOcean", score: 3 }
+    ]
+  },
+  special_considerations: [
+    "PostgreSQL - Preferred database with excellent Active Record integration"]
+})
