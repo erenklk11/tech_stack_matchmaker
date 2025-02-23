@@ -48,8 +48,8 @@ api: [
 ]
 },
 special_considerations: [
-"Vercel - Optimized deployment platform for React"
-]
+  "Vercel - Optimized deployment platform for React", 
+  "MongoDB - Forms the popular MERN stack"]
 })
 
 db.Technology.insertOne({
@@ -387,4 +387,223 @@ db.Technology.insertOne({
   },
   special_considerations: [
     "PostgreSQL - Preferred database with excellent Active Record integration"]
+})
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+DATABASE
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+db.Technology.insertOne({
+  name: "PostgreSQL",
+  category: "database",
+  description: "Powerful, open-source object-relational database system with strong reliability and feature set.",
+  use_cases: "Enterprise applications requiring ACID compliance and complex queries",
+  learning_curve: 2,
+  community_size: 3,
+  compatibility: {
+    api: [
+      { name: "REST", score: 3 },
+      { name: "GraphQL", score: 3 },
+      { name: "WebSocket", score: 2},
+      { name: "tRPC", score: 2 },
+      { name: "SOAP", score: 2 }
+    ]
+  }
+})
+
+db.Technology.insertOne({
+  name: "MongoDB",
+  category: "database",
+  description: "Popular NoSQL database that provides high performance, high availability, and easy scalability with a document-oriented data model.",
+  use_cases: "Applications requiring flexible schema and handling large amounts of unstructured data",
+  learning_curve: 2,
+  community_size: 3,
+  compatibility: {
+    api: [
+      { name: "REST", score: 3 },
+      { name: "GraphQL", score: 3 },
+      { name: "WebSocket", score: 2 },
+      { name: "tRPC", score: 2 },
+      { name: "SOAP", score: 1, reason: "SOAP's rigid XML structure doesn't align well with MongoDB's flexible document model" }
+    ]
+  }
+})
+
+db.Technology.insertOne({
+  name: "MySQL",
+  category: "database",
+  description: "Popular open-source relational database management system known for its reliability and ease of use.",
+  use_cases: "Web applications requiring robust relational data storage and ACID compliance",
+  learning_curve: 2,
+  community_size: 3,
+  compatibility: {
+    api: [
+      { name: "REST", score: 3 },
+      { name: "GraphQL", score: 3 },
+      { name: "WebSocket", score: 2 },
+      { name: "tRPC", score: 2 },
+      { name: "SOAP", score: 3, reason: "Good support for XML-based SOAP services through stored procedures" }
+    ]
+  }
+})
+
+db.Technology.insertOne({
+  name: "Redis",
+  category: "database",
+  description: "In-memory data structure store used as a database, cache, message broker, and queue.",
+  use_cases: "Caching, session management, real-time analytics, and message queuing",
+  learning_curve: 2,
+  community_size: 3,
+  compatibility: {
+    api: [
+      { name: "REST", score: 2 },
+      { name: "GraphQL", score: 2 },
+      { name: "WebSocket", score: 3},
+      { name: "tRPC", score: 2 },
+      { name: "SOAP", score: 1, reason: "Not typically used with SOAP due to its key-value nature" }
+    ]
+  }
+})
+
+db.Technology.insertOne({
+  name: "Cassandra",
+  category: "database",
+  description: "Highly scalable, distributed NoSQL database designed to handle large amounts of data across multiple servers.",
+  use_cases: "Large-scale applications requiring high availability and horizontal scalability",
+  learning_curve: 3,
+  community_size: 2,
+  compatibility: {
+    api: [
+      { name: "REST", score: 2 },
+      { name: "GraphQL", score: 2 },
+      { name: "WebSocket", score: 2 },
+      { name: "tRPC", score: 2 },
+      { name: "SOAP", score: 1, reason: "Not commonly used with SOAP due to its distributed nature and column-family data model" }
+    ]
+  }
+})
+
+db.Technology.insertOne({
+  name: "Supabase",
+  category: "database",
+  description: "Open source Firebase alternative providing a PostgreSQL database with built-in authentication and realtime subscriptions.",
+  use_cases: "Building full-stack applications with authentication, realtime features and storage",
+  learning_curve: 2,
+  community_size: 2,
+  compatibility: {
+    api: [
+      { name: "REST", score: 3 },
+      { name: "GraphQL", score: 3 },
+      { name: "WebSocket", score: 3},
+      { name: "tRPC", score: 2 },
+      { name: "SOAP", score: 1, reason: "Modern cloud platform focused on REST/GraphQL APIs" }
+    ]
+  }
+})
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+API ARCHITECTURE
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+db.Technology.insertOne({
+  name: "REST",
+  category: "api",
+  description: "Representational State Transfer architectural style for distributed systems, emphasizing stateless client-server communication.",
+  use_cases: "Building scalable web services with standardized HTTP methods and resources",
+  learning_curve: 1,
+  community_size: 3
+})
+
+db.Technology.insertOne({
+  name: "GraphQL",
+  category: "api",
+  description: "Query language and runtime for APIs that enables declarative data fetching with a single endpoint.",
+  use_cases: "Building flexible APIs with precise data fetching and reduced over-fetching",
+  learning_curve: 2,
+  community_size: 3
+})
+
+db.Technology.insertOne({
+  name: "tRPC",
+  category: "api",
+  description: "End-to-end typesafe API layer that enables you to build and consume fully typed APIs without schemas or code generation.",
+  use_cases: "Building type-safe APIs between TypeScript/JavaScript frontends and backends",
+  learning_curve: 2,
+  community_size: 2
+})
+
+db.Technology.insertOne({
+  name: "WebSocket",
+  category: "api",
+  description: "Communication protocol providing full-duplex communication channels over a single TCP connection.",
+  use_cases: "Real-time applications requiring bi-directional communication like chat, gaming, and live dashboards",
+  learning_curve: 2,
+  community_size: 3
+})
+
+db.Technology.insertOne({
+  name: "SOAP",
+  category: "api",
+  description: "XML-based messaging protocol for exchanging structured information in web services, emphasizing standardization and security.",
+  use_cases: "Enterprise applications requiring strict contracts, security, and guaranteed message delivery",
+  learning_curve: 3,
+  community_size: 2
+})
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+DEPLOYMENT
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+db.Technology.insertOne({
+  name: "AWS",
+  category: "deployment",
+  description: "Comprehensive cloud computing platform offering a wide range of services including compute, storage, databases, and serverless.",
+  use_cases: "Hosting and scaling applications of any size, from startups to enterprise",
+  learning_curve: 3,
+  community_size: 3
+})
+
+db.Technology.insertOne({
+  name: "Google Cloud",
+  category: "deployment",
+  description: "Enterprise-grade cloud platform offering compute, storage, machine learning, and application development services.",
+  use_cases: "Hosting scalable applications with focus on containerization and machine learning capabilities",
+  learning_curve: 3,
+  community_size: 3
+})
+
+db.Technology.insertOne({
+  name: "Vercel",
+  category: "deployment",
+  description: "Cloud platform optimized for frontend frameworks and static sites with serverless functions support.",
+  use_cases: "Deploying modern web applications with focus on React, Next.js and other JavaScript frameworks",
+  learning_curve: 1,
+  community_size: 3
+})
+
+db.Technology.insertOne({
+  name: "Netlify",
+  category: "deployment",
+  description: "Cloud platform for automating modern web projects with continuous deployment and serverless functions.",
+  use_cases: "Deploying static sites and JAMstack applications with integrated CI/CD",
+  learning_curve: 1,
+  community_size: 3
+})
+
+db.Technology.insertOne({
+  name: "Heroku",
+  category: "deployment",
+  description: "Cloud platform as a service supporting several programming languages and deployment configurations.",
+  use_cases: "Quick deployment of web applications with simplified DevOps and managed services",
+  learning_curve: 2,
+  community_size: 3
+})
+
+db.Technology.insertOne({
+  name: "DigitalOcean",
+  category: "deployment",
+  description: "Developer-friendly cloud platform offering virtual machines, managed databases, and container deployments.",
+  use_cases: "Deploying applications with straightforward infrastructure needs and predictable pricing",
+  learning_curve: 2,
+  community_size: 3
 })
